@@ -123,6 +123,7 @@ public class RepoController {
         arrayList[1]=new ArrayList<>();//Contributors Info
         arrayList[2]=new ArrayList<>();//[2][0]-Releases-Num; Releases
         arrayList[3]=new ArrayList<>();//Commits between Releases
+        arrayList[4]=new ArrayList<>();//Time distribution of the number of submissions
 
         Connection connection = Druid.getConnection();
         Statement statement=connection.createStatement();
@@ -219,10 +220,28 @@ public class RepoController {
             arrayList[3].add(String.valueOf(count));
         }
 
+        sql="select count(message) from commits where post_date between str_to_date('2017-01-01','%Y-%m-%d %H') and str_to_date('2018-01-01','%Y-%m-%d %H');";
+        result=statement.executeQuery(sql);
+        result.next();
+        arrayList[4].add(result.getString(1));
+        sql="select count(message) from commits where post_date between str_to_date('2018-01-01','%Y-%m-%d %H') and str_to_date('2019-01-01','%Y-%m-%d %H');";
+        result=statement.executeQuery(sql);
+        result.next();
+        arrayList[4].add(result.getString(1));
+        sql="select count(message) from commits where post_date between str_to_date('2019-01-01','%Y-%m-%d %H') and str_to_date('2020-01-01','%Y-%m-%d %H');";
+        result=statement.executeQuery(sql);
+        result.next();
+        arrayList[4].add(result.getString(1));
+        sql="select count(message) from commits where post_date between str_to_date('2020-01-01','%Y-%m-%d %H') and str_to_date('2021-01-01','%Y-%m-%d %H');";
+        result=statement.executeQuery(sql);
+        result.next();
+        arrayList[4].add(result.getString(1));
+
+
+
         result.close();
         statement.close();
         Druid.closeAll(connection);
-
         return arrayList;
     }
 
