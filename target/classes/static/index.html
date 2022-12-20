@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo</title>
+    <script src="https://s3.pstatp.com/cdn/expire-1-M/jquery/3.2.1/jquery.min.js"></script>
+
+</head>
+<body background="D:\lambor\NewMedia\Material\Paper\YurisNight_ZH-CN5738817931_1920x1080.jpg">
+<!--    <h4>Demo Representation</h4>-->
+<!--    <table border="1">-->
+<!--        <tr>-->
+<!--            <th>Name</th>-->
+<!--            <th>Developer_num</th>-->
+<!--            <th>Most_active_developer</th>-->
+<!--            <th>Open_issues</th>-->
+<!--            <th>Close_issues</th>-->
+<!--        </tr>-->
+<!--        <tr>-->
+<!--            <td id="1">var1</td>-->
+<!--            <td id="2">var2</td>-->
+<!--            <td id="3">var3</td>-->
+<!--            <td id="4">var4</td>-->
+<!--            <td id="5">var5</td>-->
+<!--        </tr>-->
+<!--    </table>-->
+    <h4>Contributors Num: </h4>
+    <p id="00"> num </p>
+    <h4>Issues Num: </h4>
+    <p id="222"> num </p>
+
+    <h4>Top10 contributors</h4>
+    <table border="2">
+        <tr>
+            <th>Id</th>
+            <th>Developer_name</th>
+            <th>Contributions</th>
+            <th>avatar_url</th>
+            <th>html_url</th>
+        </tr>
+        <tr>
+            <td id="11">var</td>
+            <td id="12">var</td>
+            <td id="13">var</td>
+            <td id="14">var</td>
+<!--            <img src="https://avatars.githubusercontent.com/u/7797094?v=4" alt="some_text" width="35" height="35">-->
+            <td id="15">var</td>
+        </tr>
+        <tr>
+            <td id="21">var</td>
+            <td id="22">var</td>
+            <td id="23">var</td>
+            <td id="24">var</td>
+            <td id="25">var</td>
+        </tr>
+        <tr>
+            <td id="31">var</td>
+            <td id="32">var</td>
+            <td id="33">var</td>
+            <td id="34">var</td>
+            <td id="35">var</td>
+        </tr>
+        <tr>
+            <td id="41">var</td>
+            <td id="42">var</td>
+            <td id="43">var</td>
+            <td id="44">var</td>
+            <td id="45">var</td>
+        </tr>
+        <tr>
+            <td id="51">var</td>
+            <td id="52">var</td>
+            <td id="53">var</td>
+            <td id="54">var</td>
+            <td id="55">var</td>
+        </tr>
+        <tr>
+            <td id="61">var</td>
+            <td id="62">var</td>
+            <td id="63">var</td>
+            <td id="64">var</td>
+            <td id="65">var</td>
+        </tr>
+        <tr>
+            <td id="71">var</td>
+            <td id="72">var</td>
+            <td id="73">var</td>
+            <td id="74">var</td>
+            <td id="75">var</td>
+        </tr>
+        <tr>
+            <td id="81">var</td>
+            <td id="82">var</td>
+            <td id="83">var</td>
+            <td id="84">var</td>
+            <td id="85">var</td>
+        </tr>
+        <tr>
+            <td id="91">var</td>
+            <td id="92">var</td>
+            <td id="93">var</td>
+            <td id="94">var</td>
+            <td id="95">var</td>
+        </tr>
+        <tr>
+            <td id="101">var</td>
+            <td id="102">var</td>
+            <td id="103">var</td>
+            <td id="104">var</td>
+            <td id="105">var</td>
+        </tr>
+    </table>
+
+
+    <h4>Releases</h4>
+    <table border="2">
+
+    </table>
+
+</body>
+
+<style>
+    body{
+        background:url("Picture1.jpg");
+    }
+</style>
+
+<script>
+    var obj;
+    function main(){
+        $.ajax({
+            url:'/repo/getInfo3',	//这是后端接口的url
+            method:'get',
+            success:function (res) {
+                obj = res;
+                // $("#1").text(obj[0]);
+                // $("#2").text(obj[1]);
+                // $("#3").text(obj[2]);
+                // $("#4").text(obj[3]);
+                // $("#5").text(obj[4]);
+                //res便是的数据便是后端拿到的数据
+                //这里需要注意：res为局部变量，
+                //所以需要在方法外定义一个变量把res赋值给他，才能在方法之外使用。
+
+
+                $("#00").text("    "+obj[0][0]);
+
+                $("#11").text(obj[1][0]);
+                $("#12").text(obj[1][1]);
+                $("#13").text(obj[1][2]);
+                $("#14").text(obj[1][3]);
+                $("#15").text(obj[1][4]);
+                $("#21").text(obj[1][5]);
+                $("#22").text(obj[1][6]);
+                $("#23").text(obj[1][7]);
+                $("#24").text(obj[1][8]);
+                $("#25").text(obj[1][9]);
+                $("#31").text(obj[1][10]);
+                $("#32").text(obj[1][11]);
+                $("#33").text(obj[1][12]);
+                $("#34").text(obj[1][13]);
+                $("#35").text(obj[1][14]);
+                $("#41").text(obj[1][15]);
+                $("#42").text(obj[1][16]);
+                $("#43").text(obj[1][17]);
+                $("#44").text(obj[1][18]);
+                $("#45").text(obj[1][19]);
+                $("#51").text(obj[1][20]);
+                $("#52").text(obj[1][21]);
+                $("#53").text(obj[1][22]);
+                $("#54").text(obj[1][23]);
+                $("#55").text(obj[1][24]);
+                $("#61").text(obj[1][25]);
+                $("#62").text(obj[1][26]);
+                $("#63").text(obj[1][27]);
+                $("#64").text(obj[1][28]);
+                $("#65").text(obj[1][29]);
+                $("#71").text(obj[1][30]);
+                $("#72").text(obj[1][31]);
+                $("#73").text(obj[1][32]);
+                $("#74").text(obj[1][33]);
+                $("#75").text(obj[1][34]);
+                $("#81").text(obj[1][35]);
+                $("#82").text(obj[1][36]);
+                $("#83").text(obj[1][37]);
+                $("#84").text(obj[1][38]);
+                $("#85").text(obj[1][39]);
+                $("#91").text(obj[1][40]);
+                $("#92").text(obj[1][41]);
+                $("#93").text(obj[1][42]);
+                $("#94").text(obj[1][43]);
+                $("#95").text(obj[1][44]);
+                $("#101").text(obj[1][45]);
+                $("#102").text(obj[1][46]);
+                $("#103").text(obj[1][47]);
+                $("#104").text(obj[1][48]);
+                $("#105").text(obj[1][49]);
+
+                $("#222").text(obj[2][0]);
+            },
+        })
+    }
+    main();
+</script>
+</html>
